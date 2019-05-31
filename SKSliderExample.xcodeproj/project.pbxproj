@@ -12,6 +12,9 @@
 		31054BD5229FC6D200BB7244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31054BD3229FC6D200BB7244 /* Main.storyboard */; };
 		31054BD7229FC6D400BB7244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31054BD6229FC6D400BB7244 /* Assets.xcassets */; };
 		31054BDA229FC6D400BB7244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31054BD8229FC6D400BB7244 /* LaunchScreen.storyboard */; };
+		31054BE3229FC6F000BB7244 /* SKSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31054BE2229FC6F000BB7244 /* SKSliderView.swift */; };
+		31054BE5229FD0DA00BB7244 /* SKSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31054BE4229FD0DA00BB7244 /* SKSliderView.xib */; };
+		310A710E22A0F24200A281A1 /* SKCustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A710D22A0F24200A281A1 /* SKCustomSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		31054BD6229FC6D400BB7244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31054BD9229FC6D400BB7244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31054BDB229FC6D400BB7244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31054BE2229FC6F000BB7244 /* SKSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSliderView.swift; sourceTree = "<group>"; };
+		31054BE4229FD0DA00BB7244 /* SKSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKSliderView.xib; sourceTree = "<group>"; };
+		310A710D22A0F24200A281A1 /* SKCustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKCustomSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		31054BCE229FC6D200BB7244 /* SKSliderExample */ = {
 			isa = PBXGroup;
 			children = (
+				31054BE1229FC6DD00BB7244 /* SKSlider */,
 				31054BCF229FC6D200BB7244 /* AppDelegate.swift */,
 				31054BD1229FC6D200BB7244 /* ViewController.swift */,
 				31054BD3229FC6D200BB7244 /* Main.storyboard */,
@@ -62,6 +69,16 @@
 				31054BDB229FC6D400BB7244 /* Info.plist */,
 			);
 			path = SKSliderExample;
+			sourceTree = "<group>";
+		};
+		31054BE1229FC6DD00BB7244 /* SKSlider */ = {
+			isa = PBXGroup;
+			children = (
+				310A710D22A0F24200A281A1 /* SKCustomSlider.swift */,
+				31054BE2229FC6F000BB7244 /* SKSliderView.swift */,
+				31054BE4229FD0DA00BB7244 /* SKSliderView.xib */,
+			);
+			path = SKSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +141,7 @@
 			files = (
 				31054BDA229FC6D400BB7244 /* LaunchScreen.storyboard in Resources */,
 				31054BD7229FC6D400BB7244 /* Assets.xcassets in Resources */,
+				31054BE5229FD0DA00BB7244 /* SKSliderView.xib in Resources */,
 				31054BD5229FC6D200BB7244 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +155,8 @@
 			files = (
 				31054BD2229FC6D200BB7244 /* ViewController.swift in Sources */,
 				31054BD0229FC6D200BB7244 /* AppDelegate.swift in Sources */,
+				31054BE3229FC6F000BB7244 /* SKSliderView.swift in Sources */,
+				310A710E22A0F24200A281A1 /* SKCustomSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z7VVTM8KSD;
 				INFOPLIST_FILE = SKSliderExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z7VVTM8KSD;
 				INFOPLIST_FILE = SKSliderExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

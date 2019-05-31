@@ -16,7 +16,7 @@ class SKSliderView: UIView {
     private var minValue: Float = 0
     private var maxValue: Float = 1
     private var didValueChange: ((_ value: Float) -> Void)?
-    @IBOutlet private var slider: UISlider!
+    @IBOutlet private var slider: SKCustomSlider!
     
     @IBAction private func sliderValueChange(_ sender: UISlider) {
         if let didValueChange = didValueChange {
@@ -24,10 +24,28 @@ class SKSliderView: UIView {
         }
     }
     
+    func setTrackLine(color: UIColor, height: CGFloat) {
+        setTrackLine(height: height)
+        setMinimumTrackLine(color: color)
+        setMaximumTrackLine(color: color)
+    }
+    
+    func setTrackLine(height: CGFloat) {
+        slider.trackHeight = height
+    }
+    
+    func setMinimumTrackLine(color: UIColor) {
+        slider.minimumTrackTintColor = color
+    }
+    
+    func setMaximumTrackLine(color: UIColor) {
+        slider.maximumTrackTintColor = color
+    }
+    
     func setup(minValue: Float?=nil, maxValue: Float?=nil,
                thumbImage: UIImage?=nil, didValueChange:  ((_ value: Float) -> Void)?=nil) {
         
-        slider.setMinimumTrackImage(UIImage(named: "progress_left"), for: .normal)
+        //slider.setMinimumTrackImage(UIImage(named: "progress_left"), for: .normal)
         
         if let minValue = minValue {
             self.minValue = minValue
@@ -40,7 +58,7 @@ class SKSliderView: UIView {
         if let thumbImage = thumbImage {
             slider.setThumbImage(thumbImage, for: .normal)
         }
-        slider.trackRect(forBounds: CGRect(x: 0, y: 0, width: 100, height: 70))
+        
         self.didValueChange = didValueChange
     }
     
@@ -53,7 +71,7 @@ class SKSliderView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("SKSlider", owner: self, options: nil)
+        Bundle.main.loadNibNamed("SKSliderView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

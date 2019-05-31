@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class SKEZCustomSlider: UISlider {
+class SKCustomSlider: UISlider {
     @IBInspectable var trackHeight: CGFloat = 3
     
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
