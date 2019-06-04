@@ -18,11 +18,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="SKSlider" id="tK7-8z-8Fd">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="355"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xvl-YL-cX2" customClass="SKCustomSlider" customModule="SKSliderExample" customModuleProvider="target">
-                    <rect key="frame" x="-2" y="44" width="418" height="278"/>
+                    <rect key="frame" x="-2" y="44" width="418" height="348"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
                             <real key="value" value="13"/>
@@ -33,18 +33,18 @@
                     </connections>
                 </slider>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="1" green="0.15770537009999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="CcI-lG-ynT" firstAttribute="trailing" secondItem="xvl-YL-cX2" secondAttribute="trailing" id="0ck-9c-jXL"/>
-                <constraint firstItem="xvl-YL-cX2" firstAttribute="top" secondItem="CcI-lG-ynT" secondAttribute="top" id="XHN-3h-4Ij"/>
-                <constraint firstItem="xvl-YL-cX2" firstAttribute="leading" secondItem="CcI-lG-ynT" secondAttribute="leading" id="fSZ-wW-ryP"/>
-                <constraint firstItem="CcI-lG-ynT" firstAttribute="bottom" secondItem="xvl-YL-cX2" secondAttribute="bottom" id="pKd-fm-yNM"/>
+                <constraint firstItem="xvl-YL-cX2" firstAttribute="trailing" secondItem="CcI-lG-ynT" secondAttribute="trailing" id="ZQ6-ps-Vvq"/>
+                <constraint firstItem="xvl-YL-cX2" firstAttribute="leading" secondItem="CcI-lG-ynT" secondAttribute="leading" id="Zwx-qa-VVE"/>
+                <constraint firstItem="CcI-lG-ynT" firstAttribute="bottom" secondItem="xvl-YL-cX2" secondAttribute="bottom" id="bhe-R3-zX4"/>
+                <constraint firstItem="xvl-YL-cX2" firstAttribute="top" secondItem="CcI-lG-ynT" secondAttribute="top" id="yLg-yO-kHo"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="CcI-lG-ynT"/>
-            <point key="canvasLocation" x="47.826086956521742" y="-216.62946428571428"/>
+            <point key="canvasLocation" x="47.826086956521742" y="-240.06696428571428"/>
         </view>
     </objects>
 </document>

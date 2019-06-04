@@ -19,26 +19,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQF-6y-kAF" customClass="SKSliderView" customModule="SKSliderExample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="sfM-Sv-93L"/>
+                                    <constraint firstAttribute="height" constant="300" id="sfM-Sv-93L"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sG8-LK-5yj">
-                                <rect key="frame" x="186" y="204" width="42" height="21"/>
+                                <rect key="frame" x="186" y="464" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hQ-I5-PTi">
+                                <rect key="frame" x="264" y="424.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="VMO-b2-O1G"/>
+                                    <constraint firstAttribute="height" constant="100" id="ini-UH-P7j"/>
+                                </constraints>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="increaseButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="R7V-Mn-pkP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3s-JM-cl8">
+                                <rect key="frame" x="50" y="424.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0ON-EX-VMR"/>
+                                    <constraint firstAttribute="height" constant="100" id="t24-Hq-cSG"/>
+                                </constraints>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="decreaseButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="dFb-RN-8fh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6hQ-I5-PTi" secondAttribute="trailing" constant="50" id="0UA-Rp-HIw"/>
                             <constraint firstItem="sG8-LK-5yj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Zp-x8-AAe"/>
+                            <constraint firstItem="A3s-JM-cl8" firstAttribute="centerY" secondItem="sG8-LK-5yj" secondAttribute="centerY" id="FHf-7a-yA7"/>
                             <constraint firstItem="zQF-6y-kAF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TKN-L1-pOa"/>
                             <constraint firstItem="sG8-LK-5yj" firstAttribute="top" secondItem="zQF-6y-kAF" secondAttribute="bottom" constant="50" id="eCq-VD-d0D"/>
+                            <constraint firstItem="A3s-JM-cl8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="gmP-Pf-ZeA"/>
                             <constraint firstItem="zQF-6y-kAF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="hhK-Gf-b8x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zQF-6y-kAF" secondAttribute="trailing" id="sHW-Q8-1mK"/>
+                            <constraint firstItem="6hQ-I5-PTi" firstAttribute="centerY" secondItem="sG8-LK-5yj" secondAttribute="centerY" id="waB-X4-fbX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

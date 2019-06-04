@@ -24,6 +24,20 @@ class SKSliderView: UIView {
         }
     }
     
+    func increase(value: Float) {
+        slider.value = slider.value + value/(maxValue - minValue)
+        if let didValueChange = didValueChange {
+            didValueChange(self.getValue())
+        }
+    }
+    
+    func decrease(value: Float) {
+        slider.value = slider.value - value/(maxValue - minValue)
+        if let didValueChange = didValueChange {
+            didValueChange(self.getValue())
+        }
+    }
+    
     func setTrackLine(color: UIColor, height: CGFloat) {
         setTrackLine(height: height)
         setMinimumTrackLine(color: color)
@@ -44,8 +58,6 @@ class SKSliderView: UIView {
     
     func setup(minValue: Float?=nil, maxValue: Float?=nil,
                thumbImage: UIImage?=nil, didValueChange:  ((_ value: Float) -> Void)?=nil) {
-        
-        //slider.setMinimumTrackImage(UIImage(named: "progress_left"), for: .normal)
         
         if let minValue = minValue {
             self.minValue = minValue

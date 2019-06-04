@@ -14,7 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet var label: UILabel!
     
     lazy var didSliderValueChange = { [weak self] (_ value: Float) -> Void in
-        self?.label.text = String(value)
+        self?.label.text = String(Int(value))
+    }
+    
+    @IBAction func increaseButton() {
+        skSlider.increase(value: 50)
+    }
+    
+    @IBAction func decreaseButton() {
+        skSlider.decrease(value: 50)
     }
     
     override func viewDidLoad() {
