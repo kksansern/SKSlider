@@ -15,27 +15,40 @@ class SKSliderView: UIView {
     
     private var minValue: Float = 0
     private var maxValue: Float = 1
+    private var stepValue: Float = 0
     private var didValueChange: ((_ value: Float) -> Void)?
+    private var didIntValueChange: ((_ value: Int) -> Void)?
+    private var didStepValueChange: ((_ value: Int) -> Void)?
     @IBOutlet private var slider: SKCustomSlider!
     
     @IBAction private func sliderValueChange(_ sender: UISlider) {
-        if let didValueChange = didValueChange {
-            didValueChange(self.getValue())
-        }
+        self.didChange()
     }
     
     func increase(value: Float) {
         slider.value = slider.value + value/(maxValue - minValue)
-        if let didValueChange = didValueChange {
-            didValueChange(self.getValue())
-        }
+        self.didChange()
     }
     
     func decrease(value: Float) {
         slider.value = slider.value - value/(maxValue - minValue)
+        self.didChange()
+    }
+    
+    private func didChange() {
         if let didValueChange = didValueChange {
             didValueChange(self.getValue())
         }
+        if let didIntValueChange = didIntValueChange {
+            didIntValueChange(Int(self.getValue()))
+        }
+        if let didStepValueChange = didStepValueChange {
+            didStepValueChange(self.getStepValue())
+        }
+    }
+    
+    func setMoveStep(value: Float) {
+        self.stepValue = value
     }
     
     func setTrackLine(color: UIColor, height: CGFloat) {
@@ -56,9 +69,8 @@ class SKSliderView: UIView {
         slider.maximumTrackTintColor = color
     }
     
-    func setup(minValue: Float?=nil, maxValue: Float?=nil,
-               thumbImage: UIImage?=nil, didValueChange:  ((_ value: Float) -> Void)?=nil) {
-        
+    private func setup(minValue: Float?=nil, maxValue: Float?=nil,
+                       thumbImage: UIImage?=nil) {
         if let minValue = minValue {
             self.minValue = minValue
         }
@@ -70,8 +82,30 @@ class SKSliderView: UIView {
         if let thumbImage = thumbImage {
             slider.setThumbImage(thumbImage, for: .normal)
         }
+    }
+    
+    func setup(minValue: Float?=nil, maxValue: Float?=nil,
+               thumbImage: UIImage?=nil, didValueChange:  ((_ value: Float) -> Void)?=nil) {
+        
+        setup(minValue: minValue, maxValue: maxValue, thumbImage: thumbImage)
         
         self.didValueChange = didValueChange
+    }
+    
+    func setup(minValue: Float?=nil, maxValue: Float?=nil,
+               thumbImage: UIImage?=nil, didIntValueChange:  ((_ value: Int) -> Void)?=nil) {
+        
+        setup(minValue: minValue, maxValue: maxValue, thumbImage: thumbImage)
+        
+        self.didIntValueChange = didIntValueChange
+    }
+    
+    func setup(minValue: Float?=nil, maxValue: Float?=nil,
+               thumbImage: UIImage?=nil, didStepValueChange:  ((_ value: Int) -> Void)?=nil) {
+        
+        setup(minValue: minValue, maxValue: maxValue, thumbImage: thumbImage)
+        
+        self.didStepValueChange = didStepValueChange
     }
     
     func getRawValue() -> Float {
@@ -80,6 +114,20 @@ class SKSliderView: UIView {
     
     func getValue() -> Float {
         return (slider.value * (maxValue - minValue)) + minValue
+    }
+    
+    func getStepValue() -> Int {
+        let currentValue = Int((slider.value * (maxValue - minValue)) + minValue)
+        if stepValue <= 0 {
+            return currentValue
+        }
+        
+        let fractionTemp = currentValue % Int(stepValue)
+        if fractionTemp >= Int((stepValue/2)) {
+            return currentValue - fractionTemp + Int(stepValue)
+        } else {
+            return currentValue-fractionTemp
+        }
     }
     
     private func commonInit() {
